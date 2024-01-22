@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu>
+
+<menu id="hom" label="thepad">
+	<item label="~ Sweet ~" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/purpledragonfrog.png">
+		<action name="Execute">
+			<command>thunar</command>
+		</action>
+	</item>
+	<item label="Home Bin" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/bin.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/bin</command>
+		</action>
+	</item>
+	<item label="Downloads" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/download.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/Downloads</command>
+		</action>
+	</item>
+	<item label="Movies" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/movies.png">
+		<action name="Execute">
+			<command>thunar /var/run/media/thefrog/Movies</command>
+		</action>
+	</item>
+	<item label="Music" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/music.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/Media/Music</command>
+		</action>
+	</item>
+	<item label="OS iso&apos;s" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/places/folder-iso.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/ISOs/</command>
+		</action>
+	</item>
+	<item label="Pictures" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/photo.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/Pictures</command>
+		</action>
+	</item>
+	<item label="Projects" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/places/folder-development.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/Projects</command>
+		</action>
+	</item>
+	<item label="Television" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/folder-tv.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/Entertainment/TV/</command>
+		</action>
+	</item>
+	<item label="tmp" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/places/folder-temp.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/tmp</command>
+		</action>
+	</item>
+	<item label="Videos" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/videos.png">
+		<action name="Execute">
+			<command>thunar /home/thefrog/Videos</command>
+		</action>
+	</item>
+</menu>
+<menu id="client-list-menu" label="= Newly created label ="/>
+<menu id="uf1" label="Shared Folders">
+	<item label="Applications" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/usr-applications.png">
+		<action name="Execute">
+			<command>thunar /usr/share/applications</command>
+		</action>
+	</item>
+	<item label="Icons" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/usr-icons.png">
+		<action name="Execute">
+			<command>thunar /usr/share/icons</command>
+		</action>
+	</item>
+	<item label="Themes" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/folder-theme.png">
+		<action name="Execute">
+			<command>thunar /usr/share/themes</command>
+		</action>
+	</item>
+</menu>
+<menu id="aa" label="Accessories">
+	<item label="Catfish File Search" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Accessories/catfish.png">
+		<action name="Execute">
+			<command>catfish</command>
+		</action>
+	</item>
+	<item label="Character Map" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Accessories/character-map.png">
+		<action name="Execute">
+			<command>gucharmap</command>
+		</action>
+	</item>
+	<item label="fslint" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Accessories/fslint.png">
+		<action name="Execute">
+			<command>fslint-gui</command>
+		</action>
+	</item>
+	<item label="Nitrogen" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/nitrogen.png">
+		<action name="Execute">
+			<command>nitrogen</command>
+		</action>
+	</item>
+	<item label="Plank" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/plank.png">
+		<action name="Execute">
+			<command>plank</command>
+		</action>
+	</item>
+	<item label="Security Camera" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/128x128/apps/webcamoid.png">
+		<action name="Execute">
+			<command>webcamoid</command>
+		</action>
+	</item>
+	<item label="tint2" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Accessories/tint2.png">
+		<action name="Execute">
+			<command>tint2</command>
+		</action>
+	</item>
+	<item label="Xarchiver" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Accessories/xarchiver.png">
+		<action name="Execute">
+			<command>xarchiver</command>
+		</action>
+	</item>
+</menu>
+<menu id="te" label="Editors">
+	<item label="Geany" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Editors/geany.png">
+		<action name="Execute">
+			<command>geany</command>
+		</action>
+	</item>
+	<item label="Micro Text Editor" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Editors/Nano.png">
+		<action name="Execute">
+			<command>alacritty -e &quot;micro&quot;</command>
+		</action>
+	</item>
+	<item label="Xed Text Editor" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Editors/xed.png">
+		<action name="Execute">
+			<command>xed</command>
+		</action>
+	</item>
+</menu>
+<menu id="pix" label="Graphix">
+	<item label="Gcolor3" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/nl.hjdskes.gcolor3.png">
+		<action name="Execute">
+			<command>gcolor3</command>
+		</action>
+	</item>
+	<item label="Gimp" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Graphics/gimp.png">
+		<action name="Execute">
+			<command>gimp</command>
+		</action>
+	</item>
+	<item label="Viewnior" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Graphics/viewnior.png">
+		<action name="Execute">
+			<command>viewnior</command>
+		</action>
+	</item>
+</menu>
+<menu id="iinet" label="Internet">
+	<item label="Brave" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Internet/brave.png">
+		<action name="Execute">
+			<command>brave</command>
+		</action>
+	</item>
+	<item label="Falkon" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Internet/falkon.png">
+		<action name="Execute">
+			<command>falkon</command>
+		</action>
+	</item>
+	<item label="Freetube" icon="/home/thefrog/.local/share/icons/Openbox/Menu/freetube.png">
+		<action name="Execute">
+			<command>freetube</command>
+		</action>
+	</item>
+	<item label="qbittorrent" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Internet/qbittorrent.png">
+		<action name="Execute">
+			<command>qbittorrent</command>
+		</action>
+	</item>
+	<item label="Thunderbird" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Internet/thunderbird.png">
+		<action name="Execute">
+			<command>thunderbird</command>
+		</action>
+	</item>
+	<item label="Zoom" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Internet/zoom.png">
+		<action name="Execute">
+			<command>zoom</command>
+		</action>
+	</item>
+</menu>
+<menu id="sia" label="Multimedia">
+	<item label="Audio Sound" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Multimedia/pulseaudio.png">
+		<action name="Execute">
+			<command>pavucontrol</command>
+		</action>
+	</item>
+	<item label="Music Brainz Picard" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Multimedia/picard.png">
+		<action name="Execute">
+			<command>picard</command>
+		</action>
+	</item>
+	<item label="Simple Screen Recorder" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Multimedia/simplescreenrecorder.png">
+		<action name="Execute">
+			<command>simplescreenrecorder</command>
+		</action>
+	</item>
+	<item label="Subtitle Editor" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Editors/subtitileedit.png">
+		<action name="Execute">
+			<command>subtitleeditor</command>
+		</action>
+	</item>
+	<item label="VlC Media Player" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Multimedia/vlc.png">
+		<action name="Execute">
+			<command>vlc</command>
+		</action>
+	</item>
+</menu>
+<menu id="lo" label="Office">
+	<item label="Galculator" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/Galculator.png">
+		<action name="Execute">
+			<command>galculator</command>
+		</action>
+	</item>
+	<item label="Libre Office Base" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/libreoffice-base.png">
+		<action name="Execute">
+			<command>libreoffice --base</command>
+		</action>
+	</item>
+	<item label="Libre Office Calc" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/libreoffice-calc.png">
+		<action name="Execute">
+			<command>libreoffice --calc</command>
+		</action>
+	</item>
+	<item label="Libre Office Draw" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/libreoffice-draw.png">
+		<action name="Execute">
+			<command>libreoffice --draw</command>
+		</action>
+	</item>
+	<item label="Libre Office Impress" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/libreoffice-impress.png">
+		<action name="Execute">
+			<command>libreoffice --impress</command>
+		</action>
+	</item>
+	<item label="Libre Office Math" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/libreoffice-math.png">
+		<action name="Execute">
+			<command>libreoffice --math</command>
+		</action>
+	</item>
+	<item label="Libre Office Writer" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/libreoffice-writer.png">
+		<action name="Execute">
+			<command>libreoffice  --writer</command>
+		</action>
+	</item>
+	<item label="Osmo personal organizer" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/osmo.png">
+		<action name="Execute">
+			<command>osmo</command>
+		</action>
+	</item>
+	<item label="QPDFView" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/acroread.png">
+		<action name="Execute">
+			<command>qpdfview</command>
+		</action>
+	</item>
+</menu>
+<menu id="util" label="Utilties">
+	<item label="Alacritty" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Utilities/Alacritty.png">
+		<action name="Execute">
+			<command>alacritty</command>
+		</action>
+	</item>
+	<item label="Arandr" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Utilities/randr.png">
+		<action name="Execute">
+			<command>arandr</command>
+		</action>
+	</item>
+	<item label="Bleachbit" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Utilities/bleachbit.png">
+		<action name="Execute">
+			<command>bleachbit</command>
+		</action>
+	</item>
+	<item label="Disk Analyzer" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/baobab.png">
+		<action name="Execute">
+			<command>baobab</command>
+		</action>
+	</item>
+	<item label="EndeavourOS Log Tool" icon="/home/thefrog/.local/share/icons/Openbox/Menu/eos-log-tool.png">
+		<action name="Execute">
+			<command>eos-log-tool</command>
+		</action>
+	</item>
+	<item label="Btop" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Utilities/htop.png">
+		<action name="Execute">
+			<command>alacritty -e  &quot;btop&quot;</command>
+		</action>
+	</item>
+	<item label="Power Manager" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Utilities/power.png">
+		<action name="Execute">
+			<command>xfce4-power-manager-settings</command>
+		</action>
+	</item>
+	<item label="System Information" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/hardinfo.png">
+		<action name="Execute">
+			<command>hardinfo</command>
+		</action>
+	</item>
+</menu>
+<menu id="rap" label="Root">
+	<item label="Gparted" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/gparted.png">
+		<action name="Execute">
+			<command>gparted</command>
+		</action>
+	</item>
+	<item label="PhotoRec" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Root/photo-rec.png">
+		<action name="Execute">
+			<command>/home/thefrog/bin/testdisk-7.2-WIP/xfce4-terminal -e &quot;sudo photorec_static&quot;</command>
+		</action>
+	</item>
+	<item label="System Information" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/hardinfo.png">
+		<action name="Execute">
+			<command>gksu hardinfo</command>
+		</action>
+	</item>
+	<item label="Test Disk" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/testdisk.png">
+		<action name="Execute">
+			<command>xfce4-terminal -e &quot;sudo testdisk&quot;</command>
+		</action>
+	</item>
+	<item label="Thunar" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/org.xfce.thunar.png">
+		<action name="Execute">
+			<command>gksu thunar</command>
+		</action>
+	</item>
+</menu>
+<menu id="miy" label="Make it yours">
+	<menu id="miyob" label="Open Box" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/preferences-system-windows.png">
+		<separator/>
+		<item label="Gui Menu Editor" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/application-menu.png">
+			<action name="Execute">
+				<command>kickshaw</command>
+			</action>
+		</item>
+		<item label="Open Box Configuration" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/obconf.png">
+			<action name="Execute">
+				<command>obconf</command>
+			</action>
+		</item>
+		<item label="Obkey" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/apps/preferences-desktop-keyboard.png">
+			<action name="Execute">
+				<command>obkey</command>
+			</action>
+		</item>
+		<separator/>
+		<item label="Edit autostart" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/actions/system-run.png">
+			<action name="Execute">
+				<command>xed /home/thefrog/.config/openbox/autostart</command>
+			</action>
+		</item>
+		<item label="Edit menu.xml" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/mimetypes/text-xml.png">
+			<action name="Execute">
+				<command>xed /home/thefrog/.config/openbox/menu.xml</command>
+			</action>
+		</item>
+		<item label="Edit rc.xml" icon="/home/thefrog/.local/share/icons/nouvePurple-Dragon/256x256/mimetypes/application-rdf+xml.png">
+			<action name="Execute">
+				<command>xed /home/thefrog/.config/openbox/rc.xml</command>
+			</action>
+		</item>
+		<separator/>
+		<item label="Reconfigure" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Preferences/reconfigure-openbox.png">
+			<action name="Reconfigure"/>
+		</item>
+	</menu>
+	<separator/>
+	<menu id="xuti" label="XFCE4" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Preferences/xfce.png">
+		<item label="Clipman Settings">
+			<action name="Execute">
+				<command>xfce4-clil</command>
+			</action>
+		</item>
+		<item label="Power Manager">
+			<action name="Execute">
+				<command>xfce4</command>
+			</action>
+		</item>
+	</menu>
+	<item label="LXappearance" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Preferences/lxappearance.png">
+		<action name="Execute">
+			<command>lxappearance</command>
+		</action>
+	</item>
+	<item label="Nitrogen" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Preferences/nitrogen.png">
+		<action name="Execute">
+			<command>nitrogen</command>
+		</action>
+	</item>
+	<item label="Settings Manager" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Preferences/settings manager.png">
+		<action name="Execute">
+			<command>xfce4-settings-manager</command>
+		</action>
+	</item>
+	<item label="tint2 config" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Preferences/tint2conf.png">
+		<action name="Execute">
+			<command>tint2conf</command>
+		</action>
+	</item>
+</menu>
+<menu id="leave" label="Xit">
+	<item label="Log Out" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/System/system-log-out.png">
+		<action name="Execute">
+			<command>openbox --exit</command>
+		</action>
+	</item>
+	<item label="Reboot" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/System/system-reboot.png">
+		<action name="Execute">
+			<command>systemctl reboot</command>
+		</action>
+	</item>
+	<item label="Shutdown" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/System/gtk-quit.png">
+		<action name="Execute">
+			<command>systemctl poweroff</command>
+		</action>
+	</item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+	<separator label="thepad"/>
+	<menu id="hom" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/home.png"/>
+	<menu id="client-list-menu" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Preferences/workspaces.png"/>
+	<menu id="uf1" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Places/usr-share.png"/>
+	<separator/>
+	<menu id="aa" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Accessories/accessories-pd.png"/>
+	<menu id="te" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Editors/Editors.png"/>
+	<menu id="pix" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Graphics/Graphics.png"/>
+	<menu id="iinet" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Internet/Internet.png"/>
+	<menu id="sia" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Multimedia/Multimedia.png"/>
+	<menu id="lo" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Office/Office.png"/>
+	<menu id="util" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Utilities/Utilities.png"/>
+	<separator/>
+	<menu id="rap" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Root/Root.png"/>
+	<separator/>
+	<menu id="miy" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/Preferences/Preferences.png"/>
+	<separator/>
+	<menu id="leave" icon="/home/thefrog/.local/share/icons/Openbox/Menu/Purple-Dragon/System/Xit.png"/>
+</menu>
+
+</openbox_menu>

@@ -1,0 +1,70 @@
+#
+#<----[  These things are run when an Openbox X Session is started.
+#<----[  You may place a similar script in $HOME/.config/openbox/autostart
+#<----[  to run user-specific things.
+#
+#<----[  You can set picom to use either xrender or glx
+#<----[  Change if issues
+#autorandr horizontal
+
+# compositor - background process + disable shadowing effects during session
+picom -b &
+
+#<----[  Desktop notification
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+
+#<----[  Set background image
+nitrogen --restore
+
+#<----[  Panel
+tint2 &
+
+#<----[ Bluetooth
+blueman-manager &
+
+#<----[  install xcape - press super to get menu
+#xcape -e 'Super_L=Super_L|space' &
+
+#<----[ on laptops without seperate numeric keyboard put hashtag in front
+numlockx &
+
+#<----[  GNOME PolicyKit authentication
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+#<----[  Desktop notification
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+
+#<----[  Volume control for systray
+#<----[  volumeicon
+#sleep 1; (pasystray) &
+
+(nm-applet) &
+
+#<----[  Turn off/on System Beep
+xset b off &
+
+#<----[  Enable power management
+xfce4-power-manager &
+
+#<----[ Clipboard Manager
+(xfce4-clipman) &
+
+#<----[  launch thunar in daemon mode for faster startup
+#<----[  comment if you would rather use pcmanfm
+thunar --daemon &
+
+#<----[ Osmo personal organizer
+osmo &
+
+#<----[gis-weather AUR
+python3 "/usr/share/gis-weather/gis-weather.py" &
+
+#<----[ dock
+plank &
+
+#<----[ conky's
+sleep 5 ; conky -c /home/thefrog/.config/conky/frog-clock.conkyrc 
+conky -c /home/thefrog/.config/conky/distro.conkyrc
+
+#<----[ turn of touch pad for laptop. not needed with extra keyboard but useful
+#synclient TouchpadOff=1 &
