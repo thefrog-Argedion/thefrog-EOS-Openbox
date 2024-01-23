@@ -1,0 +1,177 @@
+#
+# ~/.bashrc
+#
+#######################
+#######################
+####    @..@       ####
+####   (----)      ####
+####  (>____<)     ####
+####  ^^~~~~^^     ####
+#######################
+##<----[ Legend
+# this #<----[ is a comment
+# this #<----( is a label
+
+
+source /home/thefrog/bin/etc/colors.config  
+#<----[ Use the up and down arrow keys for finding a command in history
+#<----[ you can write some initial letters of the command first.
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+#<----[ start custom functions
+function hg
+{
+#<----[ show the history of command
+    history | grep "$1"
+}
+
+function PkgFind 
+{
+	grep $1 /var/log/pacman.log | fzf --border=bold
+}
+
+function Viewupdates
+{
+	#<----[ check updates for standard packages output pretty colors
+		checkupdates -n | grep " " | awk {'print $1, "\033[33m" $2"\033[0m ", $3, " \033[37m"$4"\033[0m"'}
+}
+
+
+function PkgSearch
+{
+	pacman -Ss $1 | grep "$1"
+}
+
+#<----[ end custom functions
+HISTTIMEFORMAT="%F %T "
+
+HISTCONTROL=ignoredups
+
+HISTSIZE=2000
+
+HISTFILESIZE=2000
+
+shopt -s histappend
+
+export EDITOR='micro'
+################################################################################
+#<----[  Begin My Aliases
+
+#<----( Package Management Commands
+alias install='sudo pacman -S --noconfirm'        #<----[ simplified commands for pacman install remove and force remove
+#<----[ use caution with these alwasy try a minimal removal first as to not break other packages.
+alias remove='sudo pacman -R --noconfirm'
+alias erase='sudo pacman -Rdd --noconfirm'
+alias pacman-kill='sudo pacman -Rns --noconfirm'
+alias pacman-clean='sudo pacman -Sc'          #<----[ this alias will clean basic packages in cache along with orphan files and other
+alias pacman-clean-all='sudo pacman -Scc'        #<----[ this alias will clean all packages in cache along with orphan files and other
+#<----[ package information commands
+alias mkpkg-list='pacman -Qqe > /home/thefrog/bin/sys/Packages'  #<----[ create a package list of all installed packages on the system
+alias pkg-list-aur='pacman -Qm'      #<----[ AUR packages installed
+alias pkgsearch='PkgSearch'  #<----[ search the repo for packages
+alias pkgfind='PkgFind'      #<----[ find local package
+alias pkgnfo='pacman -Si'  #<----[ information about a package
+alias pkg-list='pacman -Qq'  #<----[ display the package list on screen
+alias pkg-count='pacman -Qq | wc -l'  #<----[ just show the package count
+#<----[ package fixes
+alias unlock-pacman='sudo rm /var/lib/pacman/db.lck'   #<----[ run this if pacman doesn't finish do to a shutdown or another case. Only use when needed.p
+alias keyfix='sudo pacman -Sy archlinux-keyring'      #<----[ Fix issues with pacman not upgrading
+#<----[ package mirrors and upgrade management
+alias upgrade='/home/thefrog/bin/upgrade.sh'  #<-----[runs my update scrip that uses paru to update the system then hblock to update hosts file
+alias vup='Viewupdates'    #<---- Global bashrc Function Viewupdates
+alias checkupdates4='/home/thefrog/bin/checkupdates4.sh'   #<----[ checks for specific updates found on endeavour forums
+alias showupdates='Viewupdates ; paru -Qu'  #<----[ show updates for both standard and aur packages
+alias ratemirrors-a='rate-mirrors --protocol=https arch --max-delay 7200  | sudo tee /etc/pacman.d/mirrorlist' #<----[ rate arch and endeavour mirrors found on endeavour forums
+alias ratemirrors-e='rate-mirrors --protocol=https endeavouros | sudo tee /etc/pacman.d/mirrorlist'
+
+#<----( Root Commands
+alias adblock='sudo hblock'          #<----[ this alias will update the host file to help block ads. 
+alias iown='sudo chown -R thefrog .'     #<----[ this is usefull if you format or repartition drive as permissions are automatically set to root through gparted. also for working with recovered files
+alias iso2usb='sudo /home/thefrog/bin/iso2usb.sh' #my iso 2 usb converter a simple bash script to convert ISO files to usb ((depends on dd. sync))
+alias hwreport='sudo lshw > /home/thefrog/hardware.nfo'      #<----[ this creates a harware report on the hardware on current computer. saving it to a file is necessary if you want to read it later.
+alias hardinfo='sudo hardinfo'      #<----[ this is a graphical user interface of current system information
+alias photorec='sudo /home/thefrog/bin/testdisk/phototrec'
+alias killmounts='sudo umount /home/thefrog/Downloads /home/thefrog/Entertainment'  #<----[ unmount drives hooked up to the home directory
+alias elt='eos-log-tool'
+
+#<----( Root Files
+alias efstab='sudo micro /etc/fstab'  #<----[ this one allows me to edit my fstab file in a command line editor
+
+
+#<----( System Commands
+alias services='systemctl list-units --type=service'		#<----[ systemd services status list
+alias audio="pactl info | grep 'Server Name'"
+#alias video='nvidia-smi --query-gpu=gpu_name --format=csv|sed -n 2p'
+alias h='history'
+alias cls='clear'  #<----[ probably my oldest alias
+alias mem='free -h | sed s/"Swap:             0B          0B          0B"//g'   #<----[ a standard alias carried over time
+alias ls='eza --long --tree --level=1'
+alias cat='bat'
+#alias copy='cp -Rvi'    #<----[ ask before overwrite
+alias fc-cash='fc-cache -fv'   #<----[ fontcache clean
+alias icon-cache='gtk-update-icon-cache'
+alias mktar='tar cfv'  #<----[ tar command to create file verbosly
+alias mkexe='chmod u+x /home/thefrog/bin/'  #<----[ a standard alias carried over time
+alias rb='reboot'   #<----[ compliments of SystemD~
+alias sd='shutdown now'   #<----[ compliments of SystemD~
+# awk '$1 ~ "YYYY-MM-DD" && $3 == "upgraded" { print $4; }' /var/log/pacman.log
+
+#<----( Conky 
+alias frog-default='conky -c /home/thefrog/.config/conky/frog-default.conkyrc'
+alias clock='conky -c /home/thefrog/.config/conky/frog-clock.conkyrc'
+alias distro='conky -c /home/thefrog/.config/conky/distro.conkyrc'
+
+#<----( Android
+alias adbss='adb start-server'
+alias mobile='adb devices'
+alias dbus='/home/thefrog/bin/droidbus.sh'
+alias picture-pull='/home/thefrog/bin/picture-pull.sh'
+
+#<----( Common Commands
+alias show-alias='grep "alias" /home/thefrog/.bashrc'
+alias speedtest='/home/thefrog/bin/ookla/speedtest'    #<----[check upload/download speeds 
+alias ost='/home/thefrog/bin/ookla/speedtest'    #<----[check upload/download speeds 
+alias show-weather='curl wttr\.in/?0?A?u'	#<----[   'http://v2.wttr.in/'
+alias show-weatherext='xfce4-terminal --hide-menubar --title "Simple Weather Alternative" --geometry 75x45 -x bash -c "curl 'http://v2.wttr.in/'; read -N1;"'
+alias filecount='eza * | wc -l'  #<----[ show the pwd file count non recursive
+alias show-bin='eza /home/thefrog/bin'
+alias mklist='eza -Raghl ./ > '$PWD'.lst'  #<----[ create a list of the current directory and all children
+alias copy='rsync -avhP'
+alias session='XDG_SESSION_TYPE'
+alias web='setsid brave'
+alias youtube='ytfzf -t'
+
+#<----( Save and Export Personal Settings
+alias export-configs='rm -rf .cache && cp -rvu .* /run/media/thefrog/Configs/Desktop/'
+alias export-bin='rsync -auvhP ./bin /run/media/thefrog/Configs/Desktop/'
+alias store-configs='rm -rf .cache && cp -rvu .* /run/media/thefrog/6tb-XData/Configs/'
+alias store-bin='rsync -auvhP ./bin /run/media/thefrog/6tb-XData/Configs/'
+alias update-Pictures='rsync -auvhP ./Pictures /home/thefrog/Entertainment/Pictures/'
+
+#<----( My Scripts
+#alias 256='/home/thefrog/bin/256colors.sh'      #<----[ shows you the 256 colors on screen
+alias padbus='/home/thefrog/bin/padbus.sh'       #<----[ my computer backup script. 
+alias btp='/home/thefrog/bin/padbus.sh'      
+alias ds='/home/thefrog/bin/tads.sh'      #<----[ displays basic disk information
+alias myip='/home/thefrog/bin/myip.sh'      #<----[ shows both your local ip and the mothership assigned IP
+alias mp4it='/home/thefrog/bin/mp4it.sh'   #<----[ runs mp4it.sh as just mp4it
+alias getit='/home/thefrog/bin/getit.sh'   #<<---- a youtube-dl front end 
+alias pt='/home/thefrog/bin/cktemp.sh'		#<----[ outputs the temprarture of cpu/gpu Celius is displayed 
+alias cps='/home/thefrog/bin/cps.sh'        #<----[ a copy and sync script. for local use only NONREMOTE
+alias lrn='/home/thefrog/bin/lrn.sh'
+#<----[ End Aliases
+
+#<----[ extra's
+                   #<----[ Fonts needed
+happy_icon= 		#<----[ IcoMoon-Free
+mad_icon=			#<----[ IcoMoon-Free
+arrow_icon=🖝           #<----[ Noto Sans Symbols2
+espace=' '
+#<----[ custom prompt
+PS1="\[\e[37m\][\d \t]\[\e[01;35m\]\nThis is the way\n\`if [ \$? = 0 ]; then echo \[\e[33m\]${happy_icon} \[\e[0m\]; else echo \[\e[31m\]${mad_icon} \[\e[0m\]; fi\`\[\e[00m\]\u@\h:\w\[\e[35m\]${arrow_icon}${espace}\[\e[0m\] "
+
+#<----[ add $HOME/bin to path and export
+PATH=$PATH:$HOME/bin
+
+export PATH

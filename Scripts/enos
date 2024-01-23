@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+#<----[ based on ufetch-arch - tiny system info for arch
+#<----[ based on pfetch 
+#<----[ arranged by thefrog.
+# 
+## INFO
+#  Symbols Nerd Font
+# user is already defined
+host="$(hostname)"
+# Endeavour uses quotes around the name in the lsb-release file so i just named it like ufetch orginally did for arch.
+os='EndeavourOS'
+#os=$(cat /etc/lsb-release | awk -F '=' '/DISTRIB_ID/ {print $2}')
+kernel="$(uname -sr)"
+#uptime="$(uptime -p | sed 's/up //')"
+packages="$(pacman -Q | wc -l)"
+shell="$(basename ${SHELL})"
+DE=$(wmctrl -m | awk 'NR==1 {print $2}' | perl -nle 'print ucfirst lc')
+MODEL=$(cat /sys/devices/virtual/dmi/id/board_{name,vendor} | awk '!(NR%2){print$1,p}{p=$0}')
+cpu=$(awk -F':' '/^model name/ {split($2, A, " @"); print A[1]; exit}' /proc/cpuinfo)
+#Nvidia
+#gpu=$(nvidia-smi --query-gpu=gpu_name --format=csv|sed -n 2p)
+#Amd/ATI
+gpu_info=$($(PATH="/usr/bin:$PATH" type -p lspci | cut -f1) 2> /dev/null | grep VGA)
+gpu=$(grep -oE '\[.*\]' <<< "${gpu_info}" | sed 's/\[//;s/\]//' | sed -n -e '1h;2,$H;${g;s/\n/, /g' -e 'p' -e '}')
+
+#CPU_TEMP=`inxi -s | grep "System" | awk {'print $4, $5'}`
+#GPU_TEMP=`inxi -s | grep "System" | awk {'print $8, $9, $10, $11, $12'}`
+## DEFINE COLORS
+# probably don't change these
+bold="$(tput bold)"
+black="$(tput setaf 0)"
+red="$(tput setaf 1)"
+green="$(tput setaf 2)"
+yellow="$(tput setaf 3)"
+blue="$(tput setaf 4)"
+magenta="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+white="$(tput setaf 7)"
+reset="$(tput sgr0)"
+
+# you can change these
+lc="${reset}${bold}${magenta}"		# labels
+nc="${reset}${bold}${cyan}"		# user and hostname
+ic="${reset}${bold}${white}"	# info
+c0="${reset}${bold}${magenta}"		# first color
+c1="${reset}${red}"			# second color
+
+## OUTPUT
+
+cat <<EOF
+                                 ${lc}${USER}${ic}@${lc}${host}${reset}
+         ${c1}/${c0}\\           ${lc}OS:        ${ic}${os}${reset}${lc} ${reset}
+        ${c1}/${c0}/  \\${c0}\\        ${lc}KERNEL:    ${ic}${kernel}${reset}
+       ${c1}/${c0}/    \\ ${c0}\\      ${lc}MODEL:     ${ic}${MODEL}${reset}
+     ${c1}/ ${c0}/     _) ${c0})     ${lc}CPU:      ${ic}${cpu}${reset}
+    ${c1}/_${c0}/___-- ${c0}__-      ${lc}GPU:       ${ic}${gpu}${reset}  
+    ${c1}/____--           ${lc}PACKAGES:  ${ic}${packages}${reset}
+                      ${lc}SHELL:     ${ic}${shell}${reset}
+                      ${lc}DE:        ${ic}${DE}${reset}
+                      
+EOF
+
