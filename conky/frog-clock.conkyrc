@@ -1,0 +1,97 @@
+--[[
+
+#=====================================================================================
+# Date    : March 20 2023
+# Author  : thefrog
+# Version : 1.0.0
+# License : Distributed under the terms of GNU GPL version 2 or later
+#=====================================================================================
+# CONKY
+# For commands in conky.config section:
+# http://conky.sourceforge.net/config_settings.html
+#
+# For commands in conky.text section:
+# http://conky.sourceforge.net/variables.html
+#
+#======================================================================================
+
+]]
+
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+	background = true,
+	update_interval = 1,
+	double_buffer=true,
+	no_buffers=true,
+	imlib_cache_size=10,
+	draw_shades=false,
+	default_shade_color = '#000000',
+	draw_outline=false,
+	draw_borders=false,
+	total_run_times = 0,
+	use_xft = true,
+	
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+
+alignment = 'top_right',
+	gap_y = 40,
+	minimum_width = 300,
+	minimum_height = 310,
+	own_window = true,
+	own_window_class = "Conky",
+	own_window_type = 'desktop',
+	own_window_transparent = false,
+	own_window_argb_visual = true,
+	own_window_argb_value = 225,
+	
+-------------------------------------
+--  Text Settings
+-------------------------------------
+	xftalpha=1,
+	font="Tahoma:size=10",
+	text_buffer_size=256,
+	override_utf8_locale=true,
+	draw_graph_borders = false,
+	draw_outline = false,
+	default_outline_color = '#828282',
+	no_buffers = true,
+	uppercase = false,
+	
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+
+	default_color="ffffff",
+
+	color0="7e3ebe",  --  purpledragon
+	color1="45FF00",  --  green-2
+	color2="ff0000",  --  red
+	color3 = 'b8b8b8',  --  grey
+	color4="ffffff",  --  white
+-------------------------------------
+--  End
+-------------------------------------
+
+}
+
+conky.text = [[
+${image /home/thefrog/.config/conky/images/myne/backgrounds/time-black-center-small.jpg -s 300x310}\
+\
+\
+\
+${voffset 75}\
+$alignc${font Tahoma :size=50}${color3}\
+${time %I}:${time %M}${font}${color}
+\
+\
+\
+\
+$alignc${font Tahoma :size=20}${color1} ${voffset 05}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A "}
+$alignc${execi 300 LANG=${template9} LC_TIME=${template9} date +" %B "}
+$alignc${color3}${execi 300 LANG=${template9} LC_TIME=${template9} date +" %d"}${font}
+]]
